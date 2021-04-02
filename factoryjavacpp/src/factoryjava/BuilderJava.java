@@ -11,6 +11,7 @@ public class BuilderJava implements IBuilder{
 
 	public void compile(File file) throws IOException, InterruptedException {
 		String[] comand = {"javac", file.getAbsolutePath()};
+		
 		Process procCompile =new ProcessBuilder(comand).start();
 		procCompile.waitFor();
 		BufferedReader reader =  

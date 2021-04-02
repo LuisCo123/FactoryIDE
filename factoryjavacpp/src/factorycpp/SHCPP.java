@@ -22,6 +22,7 @@ public class SHCPP extends JFrame{
 		this.SHCreator();
 		this.SHLoad(dir);   
 	}
+	
 	public SHCPP() throws IOException{
 		this.SHCreator();
 	}
@@ -38,6 +39,7 @@ public class SHCPP extends JFrame{
 		pack();
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
+	
 	private void SHLoad(String dir) throws IOException {
 		if (dir != null) {
 			FileReader fr = new FileReader(dir);

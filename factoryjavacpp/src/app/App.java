@@ -26,6 +26,7 @@ public class App {
 		}
 	}
 	public static void run (String dir, String extension) throws InstantiationException, IllegalAccessException, ClassNotFoundException, IOException, InterruptedException {
+			boolean sucess = false;
 			File currentDir = new File ("./src/plugins");
 			String[] pluginsF = currentDir.list();
 			URL[] jars = new URL [pluginsF.length]; 
@@ -40,13 +41,12 @@ public class App {
 		    		String factoryName = pluginsF[i].split("\\.")[0];
 			    	IFactoryIde factory = (IFactoryIde) Class.forName(factoryName.toLowerCase() + "." + "Concret"+ factoryName, true, urlc).newInstance();
 					createFactory(factory, dir);
+					sucess = true;
 		    	}
 		    }
-		     {
-		    	
+		    if(!sucess) {
+		    	System.out.println("Não existe plugin que suporte este arquivo");
 		    }
-		    
-			
 	}
 	public static void run() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IOException, InterruptedException {
 		String factoryName;

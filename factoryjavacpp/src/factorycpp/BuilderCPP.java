@@ -16,6 +16,7 @@ public class BuilderCPP implements IBuilder{
 		
 		Process procCompile =new ProcessBuilder(comand).start();
 		procCompile.waitFor();
+		
 		BufferedReader reader =  
 	              new BufferedReader(new InputStreamReader(procCompile.getInputStream()));
 

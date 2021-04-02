@@ -22,6 +22,7 @@ public class SHJava extends JFrame {
     	this.SHCreator();
     	this.SHLoad(dir);   
     }
+    
 	public SHJava() throws IOException{
 		this.SHCreator();
 	}
